@@ -3,16 +3,16 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950 text-white">
       <section className="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-6 text-center">
         <p className="mb-4 text-sm uppercase tracking-[0.3em] text-cyan-300">
-          Helios Website
+          Welcome to the landing page for
         </p>
 
         <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-7xl">
-          Building a brighter digital presence.
+          Brokered By Berk
         </h1>
 
         <p className="mb-8 max-w-2xl text-lg text-slate-300">
-          This is the first custom homepage deployed through Next.js, GitHub,
-          Vercel, and Sanity.
+          the new Keller Williams - Lake Washington South page for Berkley (deployed through Next.js, GitHub,
+          Vercel, and Sanity).
         </p>
 
         <div className="flex gap-4">
