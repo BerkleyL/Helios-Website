@@ -11,7 +11,7 @@ export default function Home() {
         </h1>
 
         <p className="mb-8 max-w-2xl text-lg text-slate-300">
-          the new Keller Williams - Lake Washington South page for Berkley (deployed through Next.js, GitHub,
+          the Keller Williams-Lake Washington South page for the new broker Berkley (deployed through Next.js, GitHub,
           Vercel, and Sanity).
         </p>
 
