@@ -1,34 +1,37 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
-      <section className="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-6 text-center">
-        <p className="mb-4 text-sm uppercase tracking-[0.3em] text-cyan-300">
-          Welcome to the landing page for
-        </p>
+    <main className="relative min-h-screen overflow-hidden bg-neutral-950 text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.16),transparent_35%),linear-gradient(135deg,rgba(20,20,20,0.95),rgba(0,0,0,1))]" />
+      <div className="absolute inset-0 bg-black/45" />
 
-        <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-7xl">
-          Brokered By Berk
-        </h1>
+      <section className="relative z-10 flex min-h-screen items-center justify-center px-6">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/40 text-2xl tracking-widest">
+            BB
+          </div>
 
-        <p className="mb-8 max-w-2xl text-lg text-slate-300">
-          the Keller Williams-Lake Washington South page for the new broker Berkley (deployed through Next.js, GitHub,
-          Vercel, and Sanity).
-        </p>
+          <h1 className="mb-6 text-5xl font-light tracking-[0.18em] md:text-7xl">
+            BERKLEY L
+          </h1>
 
-        <div className="flex gap-4">
-          <a
-            href="/studio"
-            className="rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 hover:bg-cyan-300"
-          >
-            Open Studio
-          </a>
+          <div className="mx-auto mb-8 h-px w-40 bg-white/40" />
 
-          <a
-            href="https://github.com/BerkleyL/Helios-Website"
-            className="rounded-full border border-white/20 px-6 py-3 font-semibold hover:bg-white/10"
-          >
-            View GitHub
-          </a>
+          <p className="mx-auto mb-10 max-w-2xl text-sm uppercase leading-7 tracking-[0.28em] text-white/80 md:text-base">
+            Luxury real estate advisory, personal representation, and
+            strategic market guidance in the Pacific Northwest.
+          </p>
+
+          <nav className="grid gap-3 md:grid-cols-4">
+            {["About", "Services", "Listings", "Contact"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="border border-white/30 px-6 py-4 text-sm uppercase tracking-[0.25em] text-white/80 transition hover:bg-white hover:text-neutral-950"
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
         </div>
       </section>
     </main>
