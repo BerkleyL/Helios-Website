@@ -6,25 +6,23 @@ export default function Home() {
   const [language, setLanguage] = useState<"en" | "zh">("en")
 
   const navItems =
-    language === "en"
-      ? ["About", "Services", "Listings", "Contact"]
-      : ["关于", "服务", "房源", "联系"]
+  language === "en"
+    ? ["Intro", "About", "Services", "Listings", "Contact"]
+    : ["简介", "关于", "服务", "房源", "联系"]
 
-  const description =
-    language === "en"
-      ? "Luxury real estate advisory, personal representation, and strategic market guidance in the Pacific Northwest."
-      : "面向太平洋西北地区的高端房地产顾问、个人化代理服务与战略市场指导。"
-
+  
   return (
     <main className="relative min-h-screen overflow-hidden bg-neutral-950 text-white">
+      <div className="pointer-events-none absolute inset-0 z-50 animate-[introFade_0.9s_ease_forwards] bg-black" />
+
       <div
-        className="absolute inset-0 bg-cover bg-[center_18%] bg-no-repeat"
+        className="absolute inset-0 animate-[backgroundFade_3.5s_ease_1.8s_forwards] bg-cover bg-[center_18%] bg-no-repeat opacity-0"
         style={{
           backgroundImage: "url('/images/condo_w_balconies_w_sky.jpg')",
         }}
       />
 
-      <div className="absolute inset-0 bg-black/45" />
+      <div className="absolute inset-0 bg-black/35" />
 
       <button
         onClick={() => setLanguage(language === "en" ? "zh" : "en")}
@@ -39,39 +37,81 @@ export default function Home() {
             <img
               src="/images/berk_head_shot.jpg"
               alt="Berkley portrait"
-              className="h-full w-full object-cover"
+              className="h-full w-full animate-[portraitFade_1.5s_ease_2.8s_forwards] object-cover opacity-0"
             />
           </div>
 
           <h1 className="mb-8 text-5xl font-light tracking-[0.18em] md:text-7xl">
-            Brokered By Berk
+            Brokered by Berk
           </h1>
 
-          <div className="relative mx-auto flex justify-center">
-            <div className="h-16 w-[2px] bg-white/40" />
+          <div className="mx-auto mb-10 w-full">
+            <div className="relative left-1/2 mx-auto h-40 w-screen -translate-x-1/2">
+             <div className="absolute left-1/2 top-1/2 h-[2px] w-[48rem] animate-[topLineSplit_1.2s_ease_0.8s_both] bg-white/70" />
+
+<div className="absolute left-1/2 top-1/2 h-[2px] w-[48rem] animate-[bottomLineSplit_1.2s_ease_0.8s_both] bg-white/70" />
+
+              <div className="absolute left-1/2 top-1/2 w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 text-white/85 opacity-0 animate-[descriptionReveal_1.2s_ease_1.4s_forwards]">
+
+  {language === "en" ? (
+    <>
+      <div className="mb-4 text-sm uppercase tracking-[0.28em]">
+        Brokered
+      </div>
+
+      <div className="text-sm uppercase leading-8 tracking-[0.28em]">
+        ...to arrange, negotiate, or facilitate a deal or agreement
+      </div>
+
+      <div className="mb-4 text-sm uppercase leading-8 tracking-[0.28em]">
+        between two or more parties...
+      </div>
+
+      <div className="mt-4 text-sm uppercase tracking-[0.28em]">
+        What can I do for you?
+      </div>
+    </>
+  ) : (
+    <>
+      <div className="mb-4 text-sm tracking-[0.28em]">
+        经纪
+      </div>
+
+      <div className="text-sm leading-8 tracking-[0.12em]">
+        ……安排、协商或促成双方或多方之间的交易与协议……
+      </div>
+
+      <div className="mt-4 text-sm tracking-[0.12em]">
+        我能为您做些什么？
+      </div>
+    </>
+  )}
+
+</div>
+            </div>
           </div>
 
-          <div className="relative mx-auto mb-8 flex justify-center">
-            <div className="h-[2px] w-[48rem] max-w-full bg-white/40" />
-          </div>
+          <div className="mx-auto -mt-10 h-20 w-[2px] bg-white/70 opacity-0 animate-[navFade_1.2s_ease_0.6s_forwards]" />
 
-          <p className="mx-auto mb-10 max-w-3xl text-sm uppercase leading-8 tracking-[0.28em] text-white/85 md:text-base">
-            {description}
-          </p>
-
-          <div className="relative mx-auto flex justify-center">
-            <div className="h-[2px] w-[48rem] max-w-full bg-white/40" />
-          </div>
-
-          <div className="mx-auto h-16 w-[2px] bg-white/40" />
-
-          <nav className="mx-auto grid max-w-4xl border-2 border-white/70 md:grid-cols-4">
+          <nav className="mx-auto grid max-w-4xl animate-[navFade_1.2s_ease_0.6s_forwards] border-2 border-white/70 opacity-0 md:grid-cols-5">
             {navItems.map((item, index) => (
               <a
                 key={item}
-                href={item === "About" || item === "关于" ? "/about" : `#${item.toLowerCase()}`}
+                href={
+  item === "Intro" || item === "简介"
+    ? "/intro"
+    : item === "About" || item === "关于"
+    ? "/about"
+    : item === "Services" || item === "服务"
+    ? "/services"
+    : item === "Listings" || item === "房源"
+    ? "/listings"
+    : item === "Contact" || item === "联系"
+    ? "/contact"
+    : "/"
+}
                 className={`px-6 py-5 text-sm uppercase tracking-[0.25em] text-white/85 transition duration-300 hover:bg-white hover:text-neutral-950 hover:tracking-[0.32em] ${
-                  index !== navItems.length - 1 ? "border-r-2 border-white/40" : ""
+                  index !== navItems.length - 1 ? "md:border-r-2 md:border-white/70" : ""
                 }`}
               >
                 {item}

@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default function AboutPage() {
+export default function IntroPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-neutral-950 px-6 py-16 text-white">
       <div
@@ -15,7 +15,7 @@ export default function AboutPage() {
         <div className="mb-10 flex items-start justify-between gap-8">
           <div>
             <h1 className="text-3xl font-light uppercase tracking-[0.35em]">
-              About
+              Intro
             </h1>
             <div className="mt-5 h-[2px] w-40 bg-white/70" />
           </div>
@@ -29,32 +29,21 @@ export default function AboutPage() {
           </Link>
         </div>
 
-        <div className="mb-10 overflow-hidden rounded-sm">
-          <img
-            src="/images/intro_page_pic.jpg"
-            alt="Berkley portrait"
-            className="h-72 w-full object-cover object-center opacity-90"
-          />
-        </div>
-
         <div className="space-y-7 text-lg leading-9 text-white/85">
           <p>
-            Brokered By Berk is a personal real estate advisory brand focused on
-            thoughtful representation, refined market strategy, and high-touch
-            client service across the Pacific Northwest.
+            Brokered By Berk begins with a simple idea: real estate is not only
+            about property, but about people, timing, context, and trust.
           </p>
 
           <p>
-            With an eye for design, architecture, and lifestyle, Berkley brings a
-            visually informed perspective to real estate decisions—helping
-            clients understand not only property value, but also place, context,
-            presentation, and long-term opportunity.
+            Whether you are buying, selling, exploring, or simply trying to
+            understand your options, my role is to help clarify the next step
+            and facilitate the right conversation.
           </p>
 
           <p>
-            The practice is built for clients who value discretion, clarity, and
-            strategic guidance in luxury residential real estate, investment
-            positioning, and personal property transitions.
+            This site is an evolving introduction to my work, my approach, and
+            the clients I hope to serve.
           </p>
         </div>
       </section>
