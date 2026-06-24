@@ -1,0 +1,112 @@
+.wrapper {
+  position: relative;
+  width: 130px;
+  min-height: 220px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.button {
+  width: 130px;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.button:hover,
+.active {
+  background: white;
+  color: black;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  right: calc(100% + 1rem);
+
+  width: 360px;
+  min-height: 240px;
+  padding: 1.6rem;
+
+  background: rgba(34, 38, 42, 0.80);
+  color: white;
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.42);
+
+  opacity: 1;
+  transform: translateX(0);
+  transition: top 0.22s ease, opacity 0.22s ease, transform 0.22s ease;
+
+  z-index: 3;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 0.94rem;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+  margin: 0.9rem 0 1rem;
+}
+
+.learnMore {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.learnMore:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .card {
+    position: static;
+    width: 100%;
+    min-height: auto;
+    margin-top: 1rem;
+  }
+
+  .buttons {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    text-align: left;
+  }
+}

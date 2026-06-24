@@ -31,7 +31,7 @@ export default function AboutPage() {
 
         <div className="mb-10 overflow-hidden rounded-sm">
           <img
-            src="/images/intro_page_pic.jpg"
+            src="/images/cropped_orange_sunset_pic.jpg"
             alt="Berkley portrait"
             className="h-72 w-full object-cover object-center opacity-90"
           />
@@ -39,22 +39,15 @@ export default function AboutPage() {
 
         <div className="space-y-7 text-lg leading-9 text-white/85">
           <p>
-            Brokered By Berk is a personal real estate advisory brand focused on
-            thoughtful representation, refined market strategy, and high-touch
-            client service across the Pacific Northwest.
+            I bring more than 30 years of experience as a business owner and contractor in construction, renovation, and water-loss restoration. This background gives me a trained eye during home tours and a practical understanding of how homes are built, maintained, and improved.
           </p>
 
           <p>
-            With an eye for design, architecture, and lifestyle, Berkley brings a
-            visually informed perspective to real estate decisions—helping
-            clients understand not only property value, but also place, context,
-            presentation, and long-term opportunity.
+            Over the past decade, my company specialized in water-loss restoration, primarily within high-rise condominium communities. My team and I worked inside thousands of condo units and throughout every part of the building—from mechanical and electrical rooms to elevators, security systems, rooftops, parking garages, and common areas. As a result, I understand the strengths, weaknesses, and long-term maintenance challenges of condo properties better than most.
           </p>
 
           <p>
-            The practice is built for clients who value discretion, clarity, and
-            strategic guidance in luxury residential real estate, investment
-            positioning, and personal property transitions.
+            I have also worked closely with property management companies and condominium boards to plan reserve fund projects, oversee repairs, and support bylaw compliance. Let my experience provide you with a deeper perspective and greater confidence when evaluating condo ownership.
           </p>
         </div>
       </section>

@@ -28,22 +28,24 @@ export default function IntroPage() {
             ×
           </Link>
         </div>
-
+        <div className="mb-10 overflow-hidden rounded-sm">
+          <img
+            src="/images/intro_page_pic.jpg"
+            alt="Berkley portrait"
+            className="h-72 w-full object-cover object-center opacity-90"
+          />
+        </div>
         <div className="space-y-7 text-lg leading-9 text-white/85">
           <p>
-            Brokered By Berk begins with a simple idea: real estate is not only
-            about property, but about people, timing, context, and trust.
+            A Canadian prairie farm boy at heart and now a proud Pacific Northwest resident, I was born on the Prairies, raised among the rolling hills and forests east of the Canadian Rockies, and eventually moved to the PNW following my wife’s career path. Once here, I quickly fell in love with the region — especially its real estate and endless outdoor activities. From unique landscapes and distinctive neighbourhoods to the incredible diversity of architecture and vegetation, the Pacific Northwest offers a character and beauty unlike anywhere else.
           </p>
 
           <p>
-            Whether you are buying, selling, exploring, or simply trying to
-            understand your options, my role is to help clarify the next step
-            and facilitate the right conversation.
+            Not being a local is, in many ways, one of my strengths. I bring fresh eyes to every neighbourhood, community, and property, helping clients discover opportunities and possibilities they may otherwise overlook. Seattle and the surrounding region have so much to offer, and helping others find a place they are proud to call HOME is both exciting and deeply rewarding.
           </p>
 
           <p>
-            This site is an evolving introduction to my work, my approach, and
-            the clients I hope to serve.
+            To me, a home is not about size or grandeur; it is about how it makes you feel. That perspective shapes how I work with clients: understanding what truly matters to you and helping you find a home that enhances your quality of life. My approach is simple: listen carefully, ask the right questions, and help you articulate what “home” truly means for you. Whether you are buying your first property, relocating, upgrading, or searching for your forever home, I look forward to helping you find it. 
           </p>
         </div>
       </section>

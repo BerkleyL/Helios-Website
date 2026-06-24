@@ -10,9 +10,17 @@ export default function Home() {
     ? ["Intro", "About", "Services", "Listings", "Contact"]
     : ["简介", "关于", "服务", "房源", "联系"]
 
-  
   return (
     <main className="relative min-h-screen overflow-hidden bg-neutral-950 text-white">
+
+    <div className="absolute left-6 top-6 z-20 opacity-0 animate-[logoFade_1.2s_ease_3.2s_forwards]">
+     <img
+      src="/images/kw-lws_logo_white_transparent.png"
+     alt="Brokered By Berk logo"
+     className="h-24 w-auto"
+    />
+    </div>
+
       <div className="pointer-events-none absolute inset-0 z-50 animate-[introFade_0.9s_ease_forwards] bg-black" />
 
       <div
