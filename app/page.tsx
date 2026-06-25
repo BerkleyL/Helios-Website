@@ -1,9 +1,23 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Home() {
   const [language, setLanguage] = useState<"en" | "zh">("en")
+
+useEffect(() => {
+  const savedLanguage = localStorage.getItem("preferredLanguage")
+
+  if (savedLanguage === "en" || savedLanguage === "zh") {
+    setLanguage(savedLanguage)
+  }
+}, [])
+
+const toggleLanguage = () => {
+  const nextLanguage = language === "en" ? "zh" : "en"
+  setLanguage(nextLanguage)
+  localStorage.setItem("preferredLanguage", nextLanguage)
+}
 
   const navItems =
   language === "en"
@@ -33,7 +47,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-black/35" />
 
       <button
-        onClick={() => setLanguage(language === "en" ? "zh" : "en")}
+        onClick={toggleLanguage}
         className="absolute right-6 top-6 z-20 border-2 border-white/70 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/80 transition duration-300 hover:bg-white hover:text-neutral-950"
       >
         {language === "en" ? "中文" : "EN"}

@@ -1,6 +1,20 @@
+"use client"
+
 import Link from "next/link"
 
+import { useEffect, useState } from "react"
+
 export default function IntroPage() {
+  const [language, setLanguage] = useState<"en" | "zh">("en")
+
+useEffect(() => {
+  const savedLanguage = localStorage.getItem("preferredLanguage")
+
+  if (savedLanguage === "en" || savedLanguage === "zh") {
+    setLanguage(savedLanguage)
+  }
+}, [])
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-neutral-950 px-6 py-16 text-white">
       <div
@@ -14,8 +28,9 @@ export default function IntroPage() {
       <section className="relative z-10 mx-auto max-w-5xl rounded-sm bg-neutral-950/80 px-8 py-10 shadow-2xl ring-1 ring-white/20 md:px-14 md:py-14">
         <div className="mb-10 flex items-start justify-between gap-8">
           <div>
+              
             <h1 className="text-3xl font-light uppercase tracking-[0.35em]">
-              Intro
+              {language === "en" ? "Intro" : "简介"}
             </h1>
             <div className="mt-5 h-[2px] w-40 bg-white/70" />
           </div>
@@ -36,6 +51,9 @@ export default function IntroPage() {
           />
         </div>
         <div className="space-y-7 text-lg leading-9 text-white/85">
+
+{language === "en" ? (
+  <>        
           <p>
             A Canadian prairie farm boy at heart and now a proud Pacific Northwest resident, I was born on the Prairies, raised among the rolling hills and forests east of the Canadian Rockies, and eventually moved to the PNW following my wife’s career path. Once here, I quickly fell in love with the region — especially its real estate and endless outdoor activities. From unique landscapes and distinctive neighbourhoods to the incredible diversity of architecture and vegetation, the Pacific Northwest offers a character and beauty unlike anywhere else.
           </p>
@@ -47,6 +65,12 @@ export default function IntroPage() {
           <p>
             To me, a home is not about size or grandeur; it is about how it makes you feel. That perspective shapes how I work with clients: understanding what truly matters to you and helping you find a home that enhances your quality of life. My approach is simple: listen carefully, ask the right questions, and help you articulate what “home” truly means for you. Whether you are buying your first property, relocating, upgrading, or searching for your forever home, I look forward to helping you find it. 
           </p>
+</>
+) : (
+  <>
+    <p>中文内容即将更新。</p>
+  </>
+)}
         </div>
       </section>
     </main>

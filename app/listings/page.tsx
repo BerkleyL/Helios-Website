@@ -1,6 +1,18 @@
+"use client"
 import Link from "next/link"
-
+import { useEffect, useState } from "react"
 export default function ListingsPage() {
+
+const [language, setLanguage] = useState<"en" | "zh">("en")
+
+useEffect(() => {
+  const savedLanguage = localStorage.getItem("preferredLanguage")
+
+  if (savedLanguage === "en" || savedLanguage === "zh") {
+    setLanguage(savedLanguage)
+  }
+}, [])
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-neutral-950 px-6 py-16 text-white">
       <div
@@ -15,7 +27,7 @@ export default function ListingsPage() {
         <div className="mb-10 flex items-start justify-between gap-8">
           <div>
             <h1 className="text-3xl font-light uppercase tracking-[0.35em]">
-              Listings
+              {language === "en" ? "Listings" : "列表"}
             </h1>
             <div className="mt-5 h-[2px] w-40 bg-white/70" />
           </div>
@@ -38,6 +50,9 @@ export default function ListingsPage() {
         
 
         <div className="space-y-7 text-lg leading-9 text-white/85">
+
+{language === "en" ? (
+          <>
           <p>
             A KW-LWS Colleague listing would go here.
           </p>
@@ -48,6 +63,14 @@ export default function ListingsPage() {
           <p>
             And even more KW-LWS Colleague listings would go here.
           </p>
+
+          </>
+        ) : (
+          <>
+         <p>中文内容即将更新。</p>
+        </>
+)}
+
         </div>
       </section>
     </main>

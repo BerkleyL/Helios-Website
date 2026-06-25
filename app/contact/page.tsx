@@ -1,4 +1,6 @@
+"use client"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 import {
   FaInstagram,
@@ -10,6 +12,16 @@ import {
 import { SiXiaohongshu } from "react-icons/si"
 
 export default function ContactPage() {
+  const [language, setLanguage] = useState<"en" | "zh">("en");
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("preferredLanguage");
+
+    if (savedLanguage === "en" || savedLanguage === "zh") {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-neutral-950 px-6 py-16 text-white">
       <div
@@ -24,7 +36,7 @@ export default function ContactPage() {
         <div className="mb-10 flex items-start justify-between gap-8">
           <div>
             <h1 className="text-3xl font-light uppercase tracking-[0.35em]">
-              Contact
+              {language === "en" ? "Contact" : "联系"}
             </h1>
             <div className="mt-5 h-[2px] w-40 bg-white/70" />
           </div>
@@ -57,7 +69,7 @@ export default function ContactPage() {
     <div className="grid gap-6 md:grid-cols-2">
       <div>
         <label className="mb-3 block text-xs uppercase tracking-[0.3em] text-white/80">
-          Name
+          {language === "en" ? "Name" : "姓名"}
         </label>
         <input
           type="text"
@@ -69,7 +81,7 @@ export default function ContactPage() {
 
       <div>
         <label className="mb-3 block text-xs uppercase tracking-[0.3em] text-white/80">
-          Phone (Optional)
+          {language === "en" ? "Phone (Optional)" : "电话（可选）"}
         </label>
         <input
           type="tel"
@@ -81,7 +93,7 @@ export default function ContactPage() {
 
     <div>
       <label className="mb-3 block text-xs uppercase tracking-[0.3em] text-white/80">
-        Email
+        {language === "en" ? "Email" : "电子邮箱"}
       </label>
       <input
         type="email"
@@ -93,7 +105,7 @@ export default function ContactPage() {
 
     <div>
   <label className="mb-3 block text-xs uppercase tracking-[0.3em] text-white/80">
-    Preferred Language
+    {language === "en" ? "Preferred Language" : "偏好语言"}
   </label>
 
   <select
@@ -117,7 +129,7 @@ export default function ContactPage() {
 
     <div>
       <label className="mb-3 block text-xs uppercase tracking-[0.3em] text-white/80">
-        Message
+        {language === "en" ? "Message" : "留言"}
       </label>
       <textarea
         name="message"
@@ -132,14 +144,14 @@ export default function ContactPage() {
         type="submit"
         className="bg-white px-7 py-4 text-sm font-semibold uppercase tracking-[0.25em] text-neutral-950 transition hover:bg-white/80"
       >
-        Send Message
+        {language === "en" ? "Send Message" : "发送消息"}
       </button>
 
       <button
         type="reset"
         className="border border-white/70 px-7 py-4 text-sm uppercase tracking-[0.25em] text-white transition hover:bg-white hover:text-neutral-950"
       >
-        Reset
+        {language === "en" ? "Reset" : "重置"}
       </button>
     </div>
   </form>
@@ -147,21 +159,21 @@ export default function ContactPage() {
   <aside className="space-y-8 text-white/85">
     <div>
       <h2 className="mb-3 text-xs uppercase tracking-[0.3em] text-white/70">
-        Email
+        {language === "en" ? "Email" : "电子邮箱"}
       </h2>
       <p className="text-lg">Berkley@BrokeredByBerk.com</p>
     </div>
 
     <div>
       <h2 className="mb-3 text-xs uppercase tracking-[0.3em] text-white/70">
-        Phone
+        {language === "en" ? "Phone" : "电话"}
       </h2>
       <p className="text-lg">(206) 693-8497</p>
     </div>
 
     <div>
       <h2 className="mb-3 text-xs uppercase tracking-[0.3em] text-white/70">
-        Social
+        {language === "en" ? "Social" : "社交媒体"}
       </h2>
       <div className="flex flex-col gap-4">
 
@@ -210,7 +222,7 @@ export default function ContactPage() {
 
     <div>
       <h2 className="mb-3 text-xs uppercase tracking-[0.3em] text-white/70">
-        Service Area
+        {language === "en" ? "Service Area" : "服务区域"}
       </h2>
       <p className="text-lg leading-8">
         Greater Seattle and the Pacific Northwest.

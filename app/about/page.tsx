@@ -1,6 +1,21 @@
+"use client"
 import Link from "next/link"
 
+import { useEffect, useState } from "react"
 export default function AboutPage() {
+
+const [language, setLanguage] = useState<"en" | "zh">("en")
+
+useEffect(() => {
+  const savedLanguage = localStorage.getItem("preferredLanguage")
+
+  if (savedLanguage === "en" || savedLanguage === "zh") {
+    setLanguage(savedLanguage)
+  }
+}, [])
+
+
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-neutral-950 px-6 py-16 text-white">
       <div
@@ -14,10 +29,11 @@ export default function AboutPage() {
       <section className="relative z-10 mx-auto max-w-5xl rounded-sm bg-neutral-950/80 px-8 py-10 shadow-2xl ring-1 ring-white/20 md:px-14 md:py-14">
         <div className="mb-10 flex items-start justify-between gap-8">
           <div>
+              
             <h1 className="text-3xl font-light uppercase tracking-[0.35em]">
-              About
+              {language === "en" ? "About" : "关于"}
             </h1>
-            <div className="mt-5 h-[2px] w-40 bg-white/70" />
+            <div className="mt-5 h-[2px] w-40 bg-white70" />
           </div>
 
           <Link
@@ -28,7 +44,6 @@ export default function AboutPage() {
             ×
           </Link>
         </div>
-
         <div className="mb-10 overflow-hidden rounded-sm">
           <img
             src="/images/cropped_orange_sunset_pic.jpg"
@@ -36,10 +51,12 @@ export default function AboutPage() {
             className="h-72 w-full object-cover object-center opacity-90"
           />
         </div>
-
         <div className="space-y-7 text-lg leading-9 text-white/85">
+
+{language === "en" ? (
+  <>        
           <p>
-            I bring more than 30 years of experience as a business owner and contractor in construction, renovation, and water-loss restoration. This background gives me a trained eye during home tours and a practical understanding of how homes are built, maintained, and improved.
+             I bring more than 30 years of experience as a business owner and contractor in construction, renovation, and water-loss restoration. This background gives me a trained eye during home tours and a practical understanding of how homes are built, maintained, and improved.
           </p>
 
           <p>
@@ -49,6 +66,12 @@ export default function AboutPage() {
           <p>
             I have also worked closely with property management companies and condominium boards to plan reserve fund projects, oversee repairs, and support bylaw compliance. Let my experience provide you with a deeper perspective and greater confidence when evaluating condo ownership.
           </p>
+</>
+) : (
+  <>
+    <p>中文内容即将更新。</p>
+  </>
+)}
         </div>
       </section>
     </main>
