@@ -90,7 +90,7 @@ useEffect(() => {
         </div>
         
 
-{selectedService && (
+{selectedService !== null && selectedService !== "" && (
   <div className="mt-20 border-t border-white/15 pt-10">
     <h2 className="text-3xl tracking-[0.2em] text-white uppercase">
       Detailed Service Section

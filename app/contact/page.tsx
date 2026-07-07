@@ -50,11 +50,11 @@ export default function ContactPage() {
           </Link>
         </div>
 
-        <div className="mb-10 overflow-hidden rounded-sm">
+        <div className="mb-14 mt-8 overflow-hidden rounded-sm md:mb-10 md:mt-0">
           <img
              src="/images/contact_page_pic.jpg"
              alt="Contact"
-             className="h-80 w-full object-cover opacity-90"
+             className="h-64 w-full object-cover opacity-90 md:h-80"
              style={{
              objectPosition: "center 63%",
              }}
@@ -122,7 +122,7 @@ export default function ContactPage() {
     </option>
 
     <option value="Either" className="bg-neutral-900">
-      Either / Either is Fine
+      Either
     </option>
   </select>
 </div>

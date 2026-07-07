@@ -52,7 +52,10 @@ return (
   >
     <button
     type="button"
-    onClick={() => setActive(null)}
+    onClick={() => {
+     setActive(null)
+     onLearnMore("")
+    }}
     className="absolute right-4 top-4 z-20 text-2xl font-light text-white/70 transition hover:text-white"
     aria-label="Close service details"
   >
