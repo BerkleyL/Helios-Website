@@ -1,5 +1,8 @@
 "use client"
 
+// Imports
+
+import JsonLd from "@/components/JsonLd"
 import { useEffect, useState } from "react"
 import {
   HiOutlineUser,
@@ -8,6 +11,36 @@ import {
   HiOutlineBuildingOffice2,
   HiOutlineEnvelope,
 } from "react-icons/hi2";
+
+// Structured data
+
+const homePageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://brokeredbyberk.com/#webpage",
+
+  url: "https://brokeredbyberk.com",
+  name: "Brokered by Berk | Relocation & Real Estate Guidance",
+  description:
+    "Thoughtful real estate and relocation guidance for professionals and families moving to the Greater Seattle area.",
+
+  isPartOf: {
+    "@id": "https://brokeredbyberk.com/#website",
+  },
+
+  about: {
+    "@id": "https://brokeredbyberk.com/#real-estate-agent",
+  },
+
+  mainEntity: {
+    "@id": "https://brokeredbyberk.com/#real-estate-agent",
+  },
+
+  inLanguage: ["en-US", "zh-CN"],
+}
+
+// Component
+
 export default function Home() {
   const [language, setLanguage] = useState<"en" | "zh">("en")
 
@@ -31,12 +64,16 @@ const toggleLanguage = () => {
     : ["简介", "关于", "服务", "房源", "联系"]
 
   return (
+
+ <>
+    <JsonLd data={homePageJsonLd} />
+
     <main className="relative min-h-screen overflow-hidden bg-neutral-950 text-white">
 
     <div className="absolute left-5 top-5 z-20 opacity-0 animate-[logoFade_1.2s_ease_3.2s_forwards] md:left-6 md:top-6">
      <img
       src="/images/kw-lws_logo_white_transparent.png"
-     alt="Brokered By Berk logo"
+     alt="Keller Williams Lake Washington South Logo"
      className="h-12 w-auto md:h-24"
     />
     </div>
@@ -169,5 +206,6 @@ const toggleLanguage = () => {
         </div>
       </section>
     </main>
+     </>
   )
 }
